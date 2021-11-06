@@ -38,6 +38,16 @@ class StarboardsManager extends EventEmitter {
          * @private
          */
         this._options = merge(DefaultStarboardsManagerOptions, options);
+        if (this._options.storage.type == "sqlite") {
+            this._options.storage = {
+                type: "sqlite",
+                file: this._options.storage.file,
+                name: "database",
+                username: "user",
+                password: "password",
+                host: "localhost",
+            };
+        }
 
         /**
          * Starboards managed by this manager
@@ -45,11 +55,11 @@ class StarboardsManager extends EventEmitter {
          */
         this.starboards = [];
 
-        const database = new Sequelize("database", "user", "password", {
-            host: "localhost",
-            dialect: "sqlite",
+        const database = new Sequelize(this._options.storage.file, this._options.storage.username, this._options.storage.password, {
+            host: this._options.storage.host,
+            dialect: this._options.storage.type,
             logging: false,
-            storage: this._options.storage,
+            storage: this._options.storage.file,
         });
 
         class Starboards extends Model { }
