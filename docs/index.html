@@ -64,8 +64,111 @@
 
     <hr>
     <section>
-        <article><h3>starify-discord</h3>
-<p>README will be published with v1 release :)</p></article>
+        <article><h1>🌟 Starify Discord 🌟</h1>
+<p>starify-discord is a node.js module with a customizable framework that makes it easy to create and manage starboards!</p>
+<p><a href="https://www.npmjs.com/package/starify-discord">Click here to view on NPM!</a></p>
+<h2>✨ Features</h2>
+<ul>
+<li>very customizable!</li>
+<li>very easy to use!</li>
+<li>support for multiple databases (SQLite, Postgres, MySQL, Microsoft SQL Server, MariaDB)!</li>
+<li>ability to have &quot;secret&quot; starboards that only work in specific channels!</li>
+<li>ability to restrict starboards to members with a certain role or ignore a certain role!</li>
+<li>and more!</li>
+</ul>
+<h2>Installation</h2>
+<pre class="prettyprint linenums source"><code>npm install starify-discord
+</code></pre>
+<h2>Example Usage</h2>
+<h3>Setup:</h3>
+<pre class="prettyprint linenums source lang-js"><code>const Discord = require(&quot;discord.js&quot;);
+const { StarboardsManager } = require(&quot;starify-discord&quot;);
+
+const client = new Discord.Client({ intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MESSAGES, Discord.Intents.FLAGS.GUILD_MESSAGE_REACTIONS] });
+
+client.starboardManager = new StarboardsManager(client, {
+    storage: {
+        type: &quot;sqlite&quot;,
+        file: &quot;./starboards.sqlite&quot;,
+        name: &quot;database&quot;,
+        username: &quot;user&quot;,
+        password: &quot;password&quot;,
+        host: &quot;localhost&quot;,
+    },
+    default: {
+        emoji: &quot;⭐&quot;,
+        color: &quot;#f0ec0e&quot;,
+        selfStar: false,
+        botStar: false,
+        ignoreMembers: null,
+        ignoreMessages: null,
+    },
+});
+</code></pre>
+<h3>Create a starboard:</h3>
+<pre class="prettyprint linenums source lang-js"><code>client.starboardManager.create({
+    channelID: message.channelId,
+    emoji: &quot;⭐&quot;,
+    threshold: 10,
+    color: &quot;#f0ec0e&quot;,
+    selfStar: false,
+    botStar: false,
+    ignoreMembers: null,
+    ignoreMessages: null,
+});
+</code></pre>
+<h3>Delete a starboard:</h3>
+<pre class="prettyprint linenums source lang-js"><code>const starboardID = client.starboardManager.starboards.find(starboard => starboard.channelID == &quot;&quot; && starboard.emoji == &quot;&quot;).id;
+client.starboardManager.delete(starboardID);
+</code></pre>
+<h3>Create a secret starboard:</h3>
+<p>This <code>ignoreMessages</code> function will ignore all messages that aren't from the specified channels!</p>
+<pre class="prettyprint linenums source lang-js"><code>client.starboardManager.create({
+    channelID: message.channelId,
+    emoji: &quot;⭐&quot;,
+    threshold: 10,
+    color: &quot;#f0ec0e&quot;,
+    selfStar: false,
+    botStar: false,
+    ignoreMembers: null,
+    ignoreMessages: (message => ![&quot;channel 1 ID, &quot;channel 2 ID&quot;].includes(message.channelId)),
+});
+</code></pre>
+<h3>Blacklist a role from starboard:</h3>
+<p>This <code>ignoreMembers</code> function will not count star reactions from members who have the specified role!</p>
+<pre class="prettyprint linenums source lang-js"><code>client.starboardManager.create({
+    channelID: message.channelId,
+    emoji: &quot;⭐&quot;,
+    threshold: 10,
+    color: &quot;#f0ec0e&quot;,
+    selfStar: false,
+    botStar: false,
+    ignoreMembers: (member => member.roles.cache.has(&quot;role ID&quot;)),
+    ignoreMessages: null,
+});
+</code></pre>
+<h3>Events:</h3>
+<pre class="prettyprint linenums source lang-js"><code>// Fired when a message is added to a starboard
+client.starboardManager.on(&quot;starboardMessagePosted&quot;, (message, starboard) => {
+    console.log(message); // the message that was posted to the starboard channel
+    console.log(starboard); // the starboard that triggered this
+}
+
+// Fired when a starboard is created
+client.starboardManager.on(&quot;starboardCreated&quot;, (starboard) => {
+    console.log(starboard); // the starboard that was created
+}
+
+// Fired when a starboard is deleted
+client.starboardManager.on(&quot;starboardDeleted&quot;, (starboard) => {
+    console.log(starboard); // the starboard that was deleted
+}
+</code></pre>
+<h2>Coming Soon!</h2>
+<ul>
+<li>ability to edit starboard options easily</li>
+<li>leaderboard for top starboard messages</li>
+</ul></article>
     </section>
 
 
