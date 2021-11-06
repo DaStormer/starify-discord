@@ -1,6 +1,8 @@
 # 🌟 Starify Discord 🌟
 starify-discord is a node.js module with a customizable framework that makes it easy to create and manage starboards!
 
+[Click here to view on NPM!](https://www.npmjs.com/package/starify-discord)
+
 ## ✨ Features
 - very customizable!
 - very easy to use!
@@ -8,6 +10,11 @@ starify-discord is a node.js module with a customizable framework that makes it 
 - ability to have "secret" starboards that only work in specific channels!
 - ability to restrict starboards to members with a certain role or ignore a certain role!
 - and more!
+
+## Installation
+```
+npm install starify-discord
+```
 
 ## Example Usage
 
