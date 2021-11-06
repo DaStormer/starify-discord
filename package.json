@@ -1,0 +1,36 @@
+{
+  "name": "starify-discord",
+  "version": "1.0.0-dev",
+  "description": "Customizable framework to create and manage starboards with discord.js",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaStormer/starify-discord.git"
+  },
+  "keywords": [
+    "starboard",
+    "discord",
+    "discord-bot",
+    "discord.js",
+    "framework",
+    "customizable"
+  ],
+  "author": "DaStormer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DaStormer/starify-discord/issues"
+  },
+  "homepage": "https://github.com/DaStormer/starify-discord#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0"
+  },
+  "dependencies": {
+    "deepmerge": "^4.2.2",
+    "discord.js": "^13.3.1",
+    "sequelize": "^6.9.0",
+    "sqlite3": "github:mapbox/node-sqlite3#master"
+  }
+}
