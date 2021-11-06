@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Global</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/nav.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.3/fuse.min.js"></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" href="styles/skyceil.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="utilities">
+        <div id="search">
+            <input type="text" id="search-box" placeholder="Search"><br>
+            <div id="search-results" style="display: none;"></div>
+        </div>
+        <button class="theme" data-theme="light"><i class="fas fa-moon"></i></button>
+    </div>
+    <hr>
+    <h4><a href="index.html">Home</a></h4><h5 class="no-bottom must-underline">Classes</h5><ul><li><span class="small-icon C">C</span><b><a href="Starboard.html">Starboard</a></b><ul class="has-class-methods"><li><span class="small-icon F">F</span><a href="Starboard.html#deleteStarMessage">deleteStarMessage</a></li><li><span class="small-icon F">F</span><a href="Starboard.html#postStarMessage">postStarMessage</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#_options">_options</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#botStar">botStar</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#channel">channel</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#channelID">channelID</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#color">color</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#emoji">emoji</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#guild">guild</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#guildId">guildId</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#id">id</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#ignoreMembers">ignoreMembers</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#ignoreMessages">ignoreMessages</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#manager">manager</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#messages">messages</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#selfStar">selfStar</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#threshold">threshold</a></li></ul></li><li><span class="small-icon C">C</span><b><a href="StarboardsManager.html">StarboardsManager</a></b><ul class="has-class-methods"><li><span class="small-icon F">F</span><a href="StarboardsManager.html#_init">_init</a></li><li><span class="small-icon F">F</span><a href="StarboardsManager.html#create">create</a></li><li><span class="small-icon F">F</span><a href="StarboardsManager.html#delete">delete</a></li><li><span class="small-icon M">M</span><a href="StarboardsManager.html#_options">_options</a></li><li><span class="small-icon M">M</span><a href="StarboardsManager.html#client">client</a></li><li><span class="small-icon M">M</span><a href="StarboardsManager.html#ready">ready</a></li><li><span class="small-icon M">M</span><a href="StarboardsManager.html#starboards">starboards</a></li></ul></li></ul><h4><a href="global.html">Global</a></h4>
+</nav>
+
+<div id="main">
+    <div class="burger">
+        <div class="burger-line-1"></div>
+        <div class="burger-line-2"></div>
+        <div class="burger-line-3"></div>
+    </div>
+
+    <h1 class="page-title">Global</h1>
+
+    
+
+
+
+
+<section>
+<header>
+    <hr>
+    
+        <h2></h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+
+        
+                
+<h4 class="name" id="StarboardOptions">StarboardOptions</h4>
+
+
+
+
+<div class="description">
+    <p>The options for starboards</p>
+</div>
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<div class="table-box">
+    <table class="props">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+            <th>Attributes</th>
+            
+
+            
+            <th>Default</th>
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            <tr>
+                
+                    <td class="name"><code>channelID</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">Discord.Snowflake</span>
+
+
+                
+                </td>
+
+                
+                    <td class="attributes">
+                    
+
+                    
+                    </td>
+                
+
+                
+                    <td class="default">
+                    
+                    </td>
+                
+
+                <td class="description last"><p>The ID of the channel where starred messages should be sent</p></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>emoji</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">Discord.EmojiIdentifierResolvable</span>
+
+
+                
+                </td>
+
+                
+                    <td class="attributes">
+                    
+                        &lt;optional><br>
+                    
+
+                    
+                    </td>
+                
+
+                
+                    <td class="default">
+                    
+                        "⭐"
+                    
+                    </td>
+                
+
+                <td class="description last"><p>The emoji to react with for this starboard</p></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>threshold</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">number</span>
+
+
+                
+                </td>
+
+                
+                    <td class="attributes">
+                    
+
+                    
+                    </td>
+                
+
+                
+                    <td class="default">
+                    
+                    </td>
+                
+
+                <td class="description last"><p>The amount of reactions required for this starboard</p></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>color</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">Discord.ColorResolvable</span>
+
+
+                
+                </td>
+
+                
+                    <td class="attributes">
+                    
+                        &lt;optional><br>
+                    
+
+                    
+                    </td>
+                
+
+                
+                    <td class="default">
+                    
+                        "#f0ec0e"
+                    
+                    </td>
+                
+
+                <td class="description last"><p>The color of the embed(s) of the starboard messages</p></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>selfStar</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">boolean</span>
+
+
+                
+                </td>
+
+                
+                    <td class="attributes">
+                    
+                        &lt;optional><br>
+                    
+
+                    
+                    </td>
+                
+
+                
+                    <td class="default">
+                    
+                        false
+                    
+                    </td>
+                
+
+                <td class="description last"><p>Whether users can star their own messages</p></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>botStar</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">boolean</span>
+
+
+                
+                </td>
+
+                
+                    <td class="attributes">
+                    
+                        &lt;optional><br>
+                    
+
+                    
+                    </td>
+                
+
+                
+                    <td class="default">
+                    
+                        false
+                    
+                    </td>
+                
+
+                <td class="description last"><p>Whether bots can star messages</p></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>ignoreMembers</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">function</span>
+
+
+                
+                </td>
+
+                
+                    <td class="attributes">
+                    
+                        &lt;optional><br>
+                    
+
+                    
+                        &lt;nullable><br>
+                    
+                    </td>
+                
+
+                
+                    <td class="default">
+                    
+                        null
+                    
+                    </td>
+                
+
+                <td class="description last"><p>Ignore star reactions from members who pass this function</p></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>ignoreMessages</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">function</span>
+
+
+                
+                </td>
+
+                
+                    <td class="attributes">
+                    
+                        &lt;optional><br>
+                    
+
+                    
+                        &lt;nullable><br>
+                    
+                    </td>
+                
+
+                
+                    <td class="default">
+                    
+                        null
+                    
+                    </td>
+                
+
+                <td class="description last"><p>Ignore star reactions for messages that pass this function</p></td>
+            </tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<hr>
+            
+                
+<h4 class="name" id="StarboardsManagerOptions">StarboardsManagerOptions</h4>
+
+
+
+
+<div class="description">
+    <p>The starboards manager options</p>
+</div>
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<div class="table-box">
+    <table class="props">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            <tr>
+                
+                    <td class="name"><code>storage</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type"><a href="global.html#StorageOptions">StorageOptions</a></span>
+
+
+                
+                </td>
+
+                
+
+                
+
+                <td class="description last"><p>The starboards storage options</p></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>default</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type"><a href="global.html#StarboardOptions">StarboardOptions</a></span>
+
+
+                
+                </td>
+
+                
+
+                
+
+                <td class="description last"><p>Default starboard options for new starboards</p></td>
+            </tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<hr>
+            
+                
+<h4 class="name" id="StarMessageData">StarMessageData</h4>
+
+
+
+
+<div class="description">
+    <p>Starboard message data</p>
+</div>
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<div class="table-box">
+    <table class="props">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            <tr>
+                
+                    <td class="name"><code>messageID</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">Discord.Snowflake</span>
+
+
+                
+                </td>
+
+                
+
+                
+
+                <td class="description last"><p>The ID of the message that was starred</p></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>starMessageID</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">Discord.Snowflake</span>
+
+
+                
+                </td>
+
+                
+
+                
+
+                <td class="description last"><p>The ID of the starboard post of this message</p></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>stars</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">number</span>
+
+
+                
+                </td>
+
+                
+
+                
+
+                <td class="description last"><p>The amount of star reactions of this message</p></td>
+            </tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<hr>
+            
+                
+<h4 class="name" id="StorageOptions">StorageOptions</h4>
+
+
+
+
+<div class="description">
+    <p>The starboards storage options</p>
+</div>
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<div class="table-box">
+    <table class="props">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+            <th>Attributes</th>
+            
+
+            
+            <th>Default</th>
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            <tr>
+                
+                    <td class="name"><code>type</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">"sqlite"</span>
+|
+
+<span class="param-type">"postgres"</span>
+|
+
+<span class="param-type">"mysql"</span>
+|
+
+<span class="param-type">"mssql"</span>
+|
+
+<span class="param-type">"mariadb"</span>
+
+
+                
+                </td>
+
+                
+                    <td class="attributes">
+                    
+                        &lt;optional><br>
+                    
+
+                    
+                    </td>
+                
+
+                
+                    <td class="default">
+                    
+                        "sqlite"
+                    
+                    </td>
+                
+
+                <td class="description last"><p>The type/dialect of the database</p></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>file</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">string</span>
+
+
+                
+                </td>
+
+                
+                    <td class="attributes">
+                    
+                        &lt;optional><br>
+                    
+
+                    
+                        &lt;nullable><br>
+                    
+                    </td>
+                
+
+                
+                    <td class="default">
+                    
+                        "./starboards.sqlite"
+                    
+                    </td>
+                
+
+                <td class="description last"><p>The path to the storage file (sqlite only)</p></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>name</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">string</span>
+
+
+                
+                </td>
+
+                
+                    <td class="attributes">
+                    
+                        &lt;optional><br>
+                    
+
+                    
+                    </td>
+                
+
+                
+                    <td class="default">
+                    
+                        "database"
+                    
+                    </td>
+                
+
+                <td class="description last"><p>The name of the database</p></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>username</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">string</span>
+
+
+                
+                </td>
+
+                
+                    <td class="attributes">
+                    
+                        &lt;optional><br>
+                    
+
+                    
+                    </td>
+                
+
+                
+                    <td class="default">
+                    
+                        "user"
+                    
+                    </td>
+                
+
+                <td class="description last"><p>The username to login with</p></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>password</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">string</span>
+
+
+                
+                </td>
+
+                
+                    <td class="attributes">
+                    
+                        &lt;optional><br>
+                    
+
+                    
+                    </td>
+                
+
+                
+                    <td class="default">
+                    
+                        "password"
+                    
+                    </td>
+                
+
+                <td class="description last"><p>The password to login with</p></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>host</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">string</span>
+
+
+                
+                </td>
+
+                
+                    <td class="attributes">
+                    
+                        &lt;optional><br>
+                    
+
+                    
+                    </td>
+                
+
+                
+                    <td class="default">
+                    
+                        "localhost"
+                    
+                    </td>
+                
+
+                <td class="description last"><p>The IP of the database host</p></td>
+            </tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<hr>
+            
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> using <a href="https://github.com/devsnowflake/jsdoc-skyceil">Skyceil Theme</a>
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+
+</body>
+</html>

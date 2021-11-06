@@ -1,6 +1,6 @@
 {
   "name": "starify-discord",
-  "version": "1.0.0-dev",
+  "version": "1.0.0-alpha",
   "description": "Customizable framework to create and manage starboards with discord.js",
   "main": "src/index.js",
   "scripts": {
@@ -25,7 +25,9 @@
   },
   "homepage": "https://github.com/DaStormer/starify-discord#readme",
   "devDependencies": {
-    "eslint": "^7.32.0"
+    "eslint": "^7.32.0",
+    "jsdoc": "^3.6.7",
+    "jsdoc-skyceil": "^2.0.0"
   },
   "dependencies": {
     "deepmerge": "^4.2.2",

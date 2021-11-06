@@ -24,6 +24,7 @@ class Starboard {
         /**
          * The options of this starboard
          * @type {StarboardOptions}
+         * @private
          */
         this._options = deepmerge(DefaultStarboardOptions, options);
 

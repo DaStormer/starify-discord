@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Class: Starboard</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/nav.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.3/fuse.min.js"></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" href="styles/skyceil.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="utilities">
+        <div id="search">
+            <input type="text" id="search-box" placeholder="Search"><br>
+            <div id="search-results" style="display: none;"></div>
+        </div>
+        <button class="theme" data-theme="light"><i class="fas fa-moon"></i></button>
+    </div>
+    <hr>
+    <h4><a href="index.html">Home</a></h4><h5 class="no-bottom must-underline">Classes</h5><ul><li><span class="small-icon C">C</span><b><a href="Starboard.html">Starboard</a></b><ul class="has-class-methods"><li><span class="small-icon F">F</span><a href="Starboard.html#deleteStarMessage">deleteStarMessage</a></li><li><span class="small-icon F">F</span><a href="Starboard.html#postStarMessage">postStarMessage</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#_options">_options</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#botStar">botStar</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#channel">channel</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#channelID">channelID</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#color">color</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#emoji">emoji</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#guild">guild</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#guildId">guildId</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#id">id</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#ignoreMembers">ignoreMembers</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#ignoreMessages">ignoreMessages</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#manager">manager</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#messages">messages</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#selfStar">selfStar</a></li><li><span class="small-icon M">M</span><a href="Starboard.html#threshold">threshold</a></li></ul></li><li><span class="small-icon C">C</span><b><a href="StarboardsManager.html">StarboardsManager</a></b><ul class="has-class-methods"><li><span class="small-icon F">F</span><a href="StarboardsManager.html#_init">_init</a></li><li><span class="small-icon F">F</span><a href="StarboardsManager.html#create">create</a></li><li><span class="small-icon F">F</span><a href="StarboardsManager.html#delete">delete</a></li><li><span class="small-icon M">M</span><a href="StarboardsManager.html#_options">_options</a></li><li><span class="small-icon M">M</span><a href="StarboardsManager.html#client">client</a></li><li><span class="small-icon M">M</span><a href="StarboardsManager.html#ready">ready</a></li><li><span class="small-icon M">M</span><a href="StarboardsManager.html#starboards">starboards</a></li></ul></li></ul><h4><a href="global.html">Global</a></h4>
+</nav>
+
+<div id="main">
+    <div class="burger">
+        <div class="burger-line-1"></div>
+        <div class="burger-line-2"></div>
+        <div class="burger-line-3"></div>
+    </div>
+
+    <h1 class="page-title">Class: Starboard</h1>
+
+    
+
+
+
+
+<section>
+<header>
+    <hr>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>Starboard<span class="signature">(manager, id, options, messages)</span><span class="type-signature"></span></h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+
+    
+    <h4 class="name" id="Starboard"><span class="type-signature"></span>new Starboard<span class="signature">(manager, id, options, messages)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>A starboard</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<div class="table-box">
+    <table class="params">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            <tr>
+                
+                    <td class="name"><code>manager</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type"><a href="StarboardsManager.html">StarboardsManager</a></span>
+
+
+                
+                </td>
+
+                
+
+                
+
+                <td class="description last"><p>The starboard manager</p></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>id</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">number</span>
+
+
+                
+                </td>
+
+                
+
+                
+
+                <td class="description last"><p>The ID of this starboard</p></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>options</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type"><a href="global.html#StarboardOptions">StarboardOptions</a></span>
+
+
+                
+                </td>
+
+                
+
+                
+
+                <td class="description last"><p>The starboard options</p></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>messages</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">Array.&lt;<a href="global.html#StarMessageData">StarMessageData</a>></span>
+
+
+                
+                </td>
+
+                
+
+                
+
+                <td class="description last"><p>The messages in this starboard</p></td>
+            </tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="_options"><span class="type-signature">(private) </span>_options<span class="type-signature"> :<a href="global.html#StarboardOptions">StarboardOptions</a></span></h4>
+
+
+
+
+<div class="description">
+    <p>The options of this starboard</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="global.html#StarboardOptions">StarboardOptions</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+<h4 class="name" id="botStar"><span class="type-signature"></span>botStar<span class="type-signature"> :boolean</span></h4>
+
+
+
+
+<div class="description">
+    <p>Whether bots can star messages for this starboard</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+<h4 class="name" id="channel"><span class="type-signature"></span>channel<span class="type-signature"> :Discord.TextChannel|Discord.NewsChannel</span></h4>
+
+
+
+
+<div class="description">
+    <p>The channel of this starboard</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Discord.TextChannel</span>
+|
+
+<span class="param-type">Discord.NewsChannel</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+<h4 class="name" id="channelID"><span class="type-signature"></span>channelID<span class="type-signature"> :Discord.Snowflake</span></h4>
+
+
+
+
+<div class="description">
+    <p>The ID of the channel of this starboard</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Discord.Snowflake</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+<h4 class="name" id="color"><span class="type-signature"></span>color<span class="type-signature"> :Discord.EmojiIdentifierResolvable</span></h4>
+
+
+
+
+<div class="description">
+    <p>The color of the embed(s) of this starboard's messages</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Discord.EmojiIdentifierResolvable</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+<h4 class="name" id="emoji"><span class="type-signature"></span>emoji<span class="type-signature"> :Discord.EmojiIdentifierResolvable</span></h4>
+
+
+
+
+<div class="description">
+    <p>The emoji to react with for this starboard</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Discord.EmojiIdentifierResolvable</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+<h4 class="name" id="guild"><span class="type-signature"></span>guild<span class="type-signature"> :Discord.Guild</span></h4>
+
+
+
+
+<div class="description">
+    <p>The guild of this starboard</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Discord.Guild</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+<h4 class="name" id="guildId"><span class="type-signature"></span>guildId<span class="type-signature"> :Discord.Snowflake</span></h4>
+
+
+
+
+<div class="description">
+    <p>The ID of the guild of this starboard</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Discord.Snowflake</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+<h4 class="name" id="id"><span class="type-signature"></span>id<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    <p>The ID of this starboard</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+<h4 class="name" id="ignoreMembers"><span class="type-signature">(nullable) </span>ignoreMembers<span class="type-signature"> :function</span></h4>
+
+
+
+
+<div class="description">
+    <p>Ignore star reactions from members who pass this function</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">function</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+<h4 class="name" id="ignoreMessages"><span class="type-signature">(nullable) </span>ignoreMessages<span class="type-signature"> :function</span></h4>
+
+
+
+
+<div class="description">
+    <p>Ignore star reactions for messages that pass this function</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">function</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+<h4 class="name" id="manager"><span class="type-signature"></span>manager<span class="type-signature"> :<a href="StarboardsManager.html">StarboardsManager</a></span></h4>
+
+
+
+
+<div class="description">
+    <p>The manager of this starboard</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="StarboardsManager.html">StarboardsManager</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+<h4 class="name" id="messages"><span class="type-signature"></span>messages<span class="type-signature"> :Array.&lt;<a href="global.html#StarMessageData">StarMessageData</a>></span></h4>
+
+
+
+
+<div class="description">
+    <p>The messages in this starboard</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;<a href="global.html#StarMessageData">StarMessageData</a>></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+<h4 class="name" id="selfStar"><span class="type-signature"></span>selfStar<span class="type-signature"> :boolean</span></h4>
+
+
+
+
+<div class="description">
+    <p>Whether members can star their own messages for this starboard</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">boolean</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+<h4 class="name" id="threshold"><span class="type-signature"></span>threshold<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    <p>The amount of reactions required for this starboard</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="deleteStarMessage"><span class="type-signature">(async) </span>deleteStarMessage<span class="signature">(message)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Delete a message from the starboard</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<div class="table-box">
+    <table class="params">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            <tr>
+                
+                    <td class="name"><code>message</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">Discord.Message</span>
+
+
+                
+                </td>
+
+                
+
+                
+
+                <td class="description last"><p>The message to be deleted from the starboard</p></td>
+            </tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+            
+
+    
+
+    
+    <h4 class="name" id="postStarMessage"><span class="type-signature">(async) </span>postStarMessage<span class="signature">(message)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Post a new message in the starboard channel</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<div class="table-box">
+    <table class="params">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            <tr>
+                
+                    <td class="name"><code>message</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">Discord.Message</span>
+
+
+                
+                </td>
+
+                
+
+                
+
+                <td class="description last"><p>The message to post in the starboard channel</p></td>
+            </tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> using <a href="https://github.com/devsnowflake/jsdoc-skyceil">Skyceil Theme</a>
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+
+</body>
+</html>

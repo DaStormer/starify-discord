@@ -77,6 +77,10 @@ class StarboardsManager extends EventEmitter {
 
     }
 
+    /**
+     * Inititate the manager
+     * @private
+     */
     async _init() {
 
         const starboards = await this.starboardsDB.findAll();
