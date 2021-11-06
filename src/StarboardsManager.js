@@ -55,7 +55,7 @@ class StarboardsManager extends EventEmitter {
          */
         this.starboards = [];
 
-        const database = new Sequelize(this._options.storage.file, this._options.storage.username, this._options.storage.password, {
+        const database = new Sequelize(this._options.storage.name, this._options.storage.username, this._options.storage.password, {
             host: this._options.storage.host,
             dialect: this._options.storage.type,
             logging: false,
