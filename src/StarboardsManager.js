@@ -106,6 +106,8 @@ class StarboardsManager extends EventEmitter {
 
         this.starboards.push(starboard);
 
+        this.emit("starboardCreated", starboard, this);
+
         return starboard;
 
     }
@@ -122,6 +124,8 @@ class StarboardsManager extends EventEmitter {
         this.starboards = this.starboards.filter(sb => sb.id !== starboard.id);
 
         await this.starboardsDB.destroy({ where: { id: starboard.id } }).catch(() => { });
+
+        this.emit("starboardDeleted", starboard, this);
 
         return true;
 
