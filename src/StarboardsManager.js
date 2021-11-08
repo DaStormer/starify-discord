@@ -83,6 +83,8 @@ class StarboardsManager extends EventEmitter {
      */
     async _init() {
 
+        await this.starboardsDB.sync();
+
         const starboards = await this.starboardsDB.findAll();
 
         for (const starboard of starboards)
