@@ -2,7 +2,7 @@
   "name": "starify-discord",
   "version": "1.0.1-alpha",
   "description": "Customizable framework to create and manage starboards with discord.js",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
