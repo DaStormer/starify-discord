@@ -120,8 +120,6 @@ class Starboard {
      */
     async postStarMessage(message) {
 
-        if (this.messages.find(sMsg => sMsg.messageID == message.id)) return;
-
         if (this.ignoreMessages(message)) return;
 
         const reaction = await message.reactions.cache.get(this.emoji).fetch();
@@ -146,13 +144,23 @@ class Starboard {
         } else
             starEmbed.addField("Message", `[Jump To Message](${message.url})`);
 
-        const postedStarMessage = await this.channel.send({
-            content: `${reaction.emoji} **${starCount}**`,
-            embeds: [starEmbed, ...message.embeds],
-            files: [...message.attachments.values()],
-        });
+        const postedStarMessage = this.messages.includes(message.id) ?
+            (await this.channel.messages.fetch(this.messages.find(sMsg => sMsg.messageID == message.id).starMessageID).catch(() => { }))?.edit({
+                content: `${reaction.emoji} **${starCount}**`,
+                embeds: [starEmbed, ...message.embeds],
+                files: [...message.attachments.values()],
+            }) || await this.channel.send({
+                content: `${reaction.emoji} **${starCount}**`,
+                embeds: [starEmbed, ...message.embeds],
+                files: [...message.attachments.values()],
+            })
+            : await this.channel.send({
+                content: `${reaction.emoji} **${starCount}**`,
+                embeds: [starEmbed, ...message.embeds],
+                files: [...message.attachments.values()],
+            });
 
-        this.messages.push({ messageID: message.id, starMessageID: postedStarMessage.id, stars: starCount });
+        this.messages = this.messages.filter(sMsg => sMsg.messageID !== message.id).push({ messageID: message.id, starMessageID: postedStarMessage.id, stars: starCount });
 
         this.manager.starboardsDB.update({ messages: JSON.stringify(this.messages) }, { where: { id: this.id } });
 
