@@ -137,6 +137,30 @@ class StarboardsManager extends EventEmitter {
 
     }
 
+    /**
+     * Edit a starboard
+     * @param {Starboard|number} editStarboard The ID of the starboard to edit
+     * @param {StarboardOptions} newOptions New edited options for the starboard
+     */
+    async edit(editStarboard, newOptions) {
+
+        const starboard = this.starboards.find(sb => sb.id == (editStarboard.id || editStarboard));
+        if (!starboard) throw new Error(`Starboard (${editStarboard.id || editStarboard}) does not exist!`);
+
+        newOptions = merge(starboard._options, newOptions);
+
+        this.starboards = this.starboards.filter(sb => sb.id !== starboard.id);
+
+        const newStarboard = this.starboards.push(new Starboard(this, starboard.id, newOptions, starboard.messages));
+
+        await this.starboardsDB.update({ where: { id: starboard.id } }, { options: newOptions }).catch(() => { });
+
+        this.emit("starboardEdited", starboard, newStarboard, this);
+
+        return true;
+
+    }
+
 }
 
 module.exports = StarboardsManager;
