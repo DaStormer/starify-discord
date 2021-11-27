@@ -40,6 +40,7 @@ exports.DefaultStarboardsManagerOptions = {
         username: "user",
         password: "password",
         host: "localhost",
+        port: null,
     },
     default: {
         emoji: "⭐",
@@ -69,4 +70,5 @@ exports.StarMessageData = {};
  * @property {string} [username="user"] The username to login with
  * @property {string} [password="password"] The password to login with
  * @property {string} [host="localhost"] The IP of the database host
+ * @property {string?} [port=null] The port of the database
  */

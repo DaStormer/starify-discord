@@ -46,6 +46,7 @@ class StarboardsManager extends EventEmitter {
                 username: "user",
                 password: "password",
                 host: "localhost",
+                port: null,
             };
         }
 
@@ -60,6 +61,7 @@ class StarboardsManager extends EventEmitter {
             dialect: this._options.storage.type,
             logging: false,
             storage: this._options.storage.file,
+            port: this._options.storage.port,
         });
 
         class Starboards extends Model { }
@@ -97,6 +99,18 @@ class StarboardsManager extends EventEmitter {
     }
 
     /**
+     * JSON stringify that supports functions
+     * @param {{}} obj 
+     * @returns {string}
+     * @private
+     */
+    _stringify(obj) {
+        return JSON.stringify(obj, (key, value) => {
+            return (typeof value === "function") ? value.toString() : value;
+        });
+    }
+
+    /**
      * Create a new starboard
      * @param {StarboardOptions} options The options of this starboard
      */
@@ -106,7 +120,7 @@ class StarboardsManager extends EventEmitter {
 
         if (this.starboards.find(sb => sb.channelID == options.channelID && sb.emoji == options.emoji)) throw new Error(`A starboard with this channel ID (${options.channelID}) and emoji (${options.emoji}) already exists!`);
 
-        const starboardDBEntry = await this.starboardsDB.create({ options: JSON.stringify(options), messages: "[]" });
+        const starboardDBEntry = await this.starboardsDB.create({ options: this._stringify(options), messages: "[]" });
 
         const starboard = new Starboard(this, starboardDBEntry.id, options, []);
 

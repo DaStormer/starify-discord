@@ -2,12 +2,14 @@ module.exports = async (manager, packet) => {
 
     if (!["MESSAGE_REACTION_ADD"].includes(packet.t)) return;
 
-    const starboard = manager.starboards.find(sb => sb.channelID == packet.d.channel_id && sb.emoji == (packet.d.emoji.id || packet.d.emoji.name));
-    if (!starboard) return;
+    const starboards = manager.starboards.filter(sb => sb.emoji == (packet.d.emoji.id || packet.d.emoji.name));
+    if (!starboards.length) return;
 
-    const message = await manager.client.channels.cache.get(starboard.channelID).messages.fetch(packet.d.message_id).catch(() => { });
+    const message = await manager.client.channels.cache.get(packet.d.channel_id).messages.fetch(packet.d.message_id).catch(() => { });
     if (!message) return;
 
-    starboard.postStarMessage(message);
+    starboards.forEach(starboard => {
+        starboard.postStarMessage(message);
+    });
 
 };
