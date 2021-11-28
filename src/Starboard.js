@@ -74,13 +74,13 @@ class Starboard {
          * Ignore star reactions from members who pass this function
          * @type {Function?}
          */
-        this.ignoreMembers = this._options.ignoreMembers ?? (() => false);
+        this.ignoreMembers = eval("(" + this._options.ignoreMembers + ")") ?? (() => false);
 
         /**
          * Ignore star reactions for messages that pass this function
          * @type {Function?}
          */
-        this.ignoreMessages = this._options.ignoreMessages ?? (() => false);
+        this.ignoreMessages = eval("(" + this._options.ignoreMessages + ")") ?? (() => false);
 
         /**
          * The messages in this starboard
