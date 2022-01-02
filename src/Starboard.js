@@ -160,7 +160,8 @@ class Starboard {
                 files: [...message.attachments.values()],
             });
 
-        this.messages = this.messages.filter(sMsg => sMsg.messageID !== message.id).push({ messageID: message.id, starMessageID: postedStarMessage.id, stars: starCount });
+        this.messages = this.messages.filter(sMsg => sMsg.messageID !== message.id);
+        this.messages.push({ messageID: message.id, starMessageID: postedStarMessage.id, stars: starCount });
 
         this.manager.starboardsDB.update({ messages: JSON.stringify(this.messages) }, { where: { id: this.id } });
 
