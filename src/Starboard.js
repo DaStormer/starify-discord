@@ -144,7 +144,7 @@ class Starboard {
         } else
             starEmbed.addField("Message", `[Jump To Message](${message.url})`);
 
-        const postedStarMessage = this.messages.includes(message.id) ?
+        const postedStarMessage = this.messages.find(sMsg => sMsg.messageID == message.id) ?
             (await this.channel.messages.fetch(this.messages.find(sMsg => sMsg.messageID == message.id).starMessageID).catch(() => { }))?.edit({
                 content: `${reaction.emoji} **${starCount}**`,
                 embeds: [starEmbed, ...message.embeds],
