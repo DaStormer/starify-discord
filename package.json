@@ -1,6 +1,6 @@
 {
   "name": "starify-discord",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Customizable framework to create and manage starboards with discord.js",
   "main": "index.js",
   "scripts": {
